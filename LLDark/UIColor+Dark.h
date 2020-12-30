@@ -24,6 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIColor * (^) (UIColor * _Nullable darkColor))themeColor;
 
 /**
+ 创建一个主题颜色
+ 
+ @discussion 自动从LLDarkSource中获取深色颜色 ⚠️ 切记需要在LLDarkSource中配置颜色
+ */
+- (UIColor * (^) (void))autoThemeColor;
+
+/**
  创建一个主题CGColor
  
  @discussion 传递指定深色颜色或者传递nil，传递nil将会从LLDarkSource中获取深色颜色。
