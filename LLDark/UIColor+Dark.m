@@ -45,6 +45,18 @@ static char * const ll_theme_darkColor_identifier = "ll_theme_darkColor_identifi
     };
 }
 
+- (UIColor * _Nonnull (^)(void))themeAutoColor {
+    return ^(void){
+        UIColor *lightColor = self;
+        if (self.isTheme) lightColor = self.lightColor;
+        
+        UIColor * _Nullable darkColor = LLDarkSource.darkColorForKey(lightColor);
+        
+        return UIColor.dynamicThemeColor(lightColor, darkColor);
+    };
+    
+}
+
 - (CGColorRef _Nonnull (^)(UIColor * _Nullable))themeCGColor {
     return ^(UIColor * _Nullable darkColor) {
         return (__bridge CGColorRef)self.themeColor(darkColor);
