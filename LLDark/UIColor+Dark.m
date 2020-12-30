@@ -63,6 +63,12 @@ static char * const ll_theme_darkColor_identifier = "ll_theme_darkColor_identifi
     };
 }
 
+- (CGColorRef  _Nonnull (^)(void))themeAutoCGColor {
+    return ^(void) {
+        return (__bridge CGColorRef)self.themeAutoColor();
+    };
+}
+
 + (UIColor * (^) (UIColor *lightColor, UIColor * _Nullable darkColor))dynamicThemeColor {
     return ^(UIColor *lightColor, UIColor * _Nullable darkColor) {
         
