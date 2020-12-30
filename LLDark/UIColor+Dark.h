@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @discussion 自动从LLDarkSource中获取深色颜色 ⚠️ 切记需要在LLDarkSource中配置颜色
  */
-- (UIColor * (^) (void))autoThemeColor;
+- (UIColor * (^) (void))themeAutoColor;
 
 /**
  创建一个主题CGColor
